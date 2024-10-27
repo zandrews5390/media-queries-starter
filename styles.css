@@ -1,0 +1,347 @@
+/*
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* GLOBAL/MOBILE STYLES */
+:root{
+	--dk-blue: #555f75;
+	--lt-blue: #c0dce9;
+	--peach: #fec8bf;
+	--coral: #fe8c71;
+	--gray: #abb3b5;
+	--yellow: #ffe8a5;
+	--med-blue: #bdcbe2;
+	
+	--dk-gray: #222;
+	--wht: #f2f2f2;
+	
+	--box-shadow-sm: -3px 3px 5px var(--dk-gray);
+	--box-shadow-lg: -6px 6px 10px var(--dk-gray);
+	
+	--body-fonts: Lato, Arial, sans-serif;
+	--heading-fonts: Raleway, Arial, sans-serif;
+}
+
+body{
+	line-height: 1.5;
+	font-family: var(--body-fonts);
+	font-size: 1.2rem;
+	color: var(--dk-gray);
+	box-sizing: border-box;
+	background-color: var(--wht);
+    background-image: url("images/double-bubble-outline.webp");
+}	
+
+/* SKIP LINK STYLES */
+#skip{
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus{
+    position: static;
+    width: auto;
+    height: auto;
+    font-family: var(--body-fonts);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dk-gray);
+    outline: 4px solid var(--coral);
+    background: var(--wht);
+}
+
+/* HEADER/MAIN/FOOTER STYLES */
+header, main, footer{
+    padding: 1rem;
+	width: calc(100% - 2rem);
+	max-width: calc(1024px - 2rem);
+	margin: 0 auto;
+    background: var(--wht) url("images/concrete_seamless.webp");
+}
+
+footer{
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 8px solid var(--dk-blue);
+}
+
+/* LINK STYLES */
+a{
+	display: block;
+	padding: 16px;
+}
+
+a:hover{
+    text-decoration-color: var(--coral);
+}
+
+a:focus{
+    outline: 4px solid var(--coral);
+    outline-offset: 1px;
+}
+
+header > a{
+	width: 75px;
+	height: 60px;
+    margin: 0 auto;
+}
+
+header > a:hover svg{
+	fill: var(--coral);
+}
+
+header svg{
+	fill: var(--dk-blue);
+	height: 60px;
+	width: auto;
+}
+
+/* HEADING STYLES */
+
+h1, h2, h3{
+	font-family: var(--heading-fonts);
+	font-weight: 700;
+    text-align: center;
+}
+
+h1{
+    font-size: 2.2rem;
+    margin: 0 0 2rem;
+}
+
+h1 a{
+    color: var(--dk-gray);
+    text-decoration: none;
+    padding: 0;
+}
+
+h1 a:hover{
+    text-decoration: 4px solid underline var(--coral);
+}
+
+h2{
+    font-size: 1.8rem;
+    margin: 0.75rem 0;
+}
+
+h3{
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+/* NAVIGATION STYLES */
+nav ul{
+	text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+nav li{
+    flex-basis: 45%;
+}
+
+nav a{
+	text-decoration: none;
+	background-color: var(--dk-blue);
+	color: var(--wht);
+	font-weight: 700;
+	box-shadow: var(--box-shadow-lg);
+}
+
+nav a:hover{
+	background-color: var(--coral);
+	color: var(--dk-gray);
+	box-shadow: var(--box-shadow-sm);
+}
+
+/* TEXT STYLES */
+p{
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* FIRST SECTION STYLES */
+#section1{
+	background: center / cover no-repeat var(--gray) url("images/mountains.jpeg");
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    margin: 1.5rem auto;
+}
+
+#section1 div{
+	background-color: var(--wht);
+	width: calc(100% - 48px);
+    max-width: 400px;
+	padding: 16px;
+    border: 8px solid var(--dk-blue);
+}
+
+#section1 h2{
+	background-color: var(--dk-blue);
+	color: var(--wht);
+	padding: 8px 0;
+	margin: 0;
+}
+
+#section1 p{
+    margin-top: 24px;
+}
+
+#section1 a{
+	text-decoration: none;
+	background-color: var(--coral);
+	color: var(--dk-gray);
+	text-align: center;
+	font-weight: bold;
+	width: fit-content;
+	margin: 1.5rem auto;
+	box-shadow: var(--box-shadow-lg);
+}
+
+#section1 a:hover{
+	background-color: var(--dk-blue);
+	color: var(--wht);
+	box-shadow: var(--box-shadow-sm);
+}
+
+#section1 a:focus{
+    outline: 4px solid var(--dk-blue);
+    outline-offset: 2px;
+}
+
+/* SECOND SECTION STYLES */
+#section2 section{
+	width: 100%;
+    max-width: 315px;
+    margin: 1.25rem auto;
+}
+
+#section2 h3{
+	text-align: center;
+}
+
+#section2 svg{
+	display: block;
+	width: 150px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#person1 svg{
+	fill: var(--lt-blue);
+}
+
+#person2 svg{
+	fill: var(--dk-blue);
+}
+
+#person3 svg{
+	fill: var(--coral);
+}
+
+/* TO DO: Add the first media query here */
+/* 
+    Add the styles included below after uncommenting them,
+    then add the following selectors and styles:  
+    - adjust the layout in the header to use flexbox, allow wrapping, align the items to the center, justify them with space between, and add a 1rem gap
+    - adjust the link that is wrapped around the logo to remove all margin and set its flex basis to 15%
+    - adjust the navigation to give it a flex basis of 100%
+    - adjust the ul in the nav to justify the items in it with space between
+    - adjust the list items in the navigation so that they each have a flex basis of 20% 
+*/
+
+    /* h1{
+        margin: 0;
+        font-size: 2.75rem;
+    }
+
+    #section1{
+        height: 500px;
+    }
+
+    #section1 div{
+        border: none;
+    } */
+
+
+/* TO DO: Add the second media query here */
+/* 
+    Add the styles included below after uncommenting them,
+    then add the following selectors and styles:  
+    - adjust the layout in the header to prevent the items from wrapping, then set the padding to be: 
+        - top: 3rem
+        - right: 1rem
+        - bottom: 2rem
+        - left: 1rem
+    - adjust the styles for the link around the logo to remove the padding and set the flex basis back to zero
+    - adjust the flex basis of the nav to 60%
+    - adjust sections 2 and 3 so that they display using flexbox and allow wrapping
+    -  adjust h2 headings in sections 2 and 3 to give them a flex basis of 100%
+    - for the paragraphs in the last section, set their flex basis to 30%
+*/
+
+    /* h1{
+        font-size: 2.2rem;
+    }
+
+    #section2{
+        border-bottom: 8px solid var(--gray);
+        border-top: 8px solid var(--gray);
+        margin: 2rem auto 1rem;
+    } */
