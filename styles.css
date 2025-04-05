@@ -76,7 +76,7 @@ body{
 	box-sizing: border-box;
 	background-color: var(--wht);
     background-image: url("images/double-bubble-outline.webp");
-}	
+} 
 
 /* SKIP LINK STYLES */
 #skip{
@@ -147,7 +147,6 @@ header svg{
 }
 
 /* HEADING STYLES */
-
 h1, h2, h3{
 	font-family: var(--heading-fonts);
 	font-weight: 700;
@@ -295,53 +294,85 @@ p{
 	fill: var(--coral);
 }
 
-/* TO DO: Add the first media query here */
-/* 
-    Add the styles included below after uncommenting them,
-    then add the following selectors and styles:  
-    - adjust the layout in the header to use flexbox, allow wrapping, align the items to the center, justify them with space between, and add a 1rem gap
-    - adjust the link that is wrapped around the logo to remove all margin and set its flex basis to 15%
-    - adjust the navigation to give it a flex basis of 100%
-    - adjust the ul in the nav to justify the items in it with space between
-    - adjust the list items in the navigation so that they each have a flex basis of 20% 
-*/
-
-    /* h1{
+/* FIRST MEDIA QUERY */
+@media screen and (min-width: 600px) {
+    h1 {
         margin: 0;
         font-size: 2.75rem;
     }
 
-    #section1{
+    #section1 {
         height: 500px;
     }
 
-    #section1 div{
+    #section1 div {
         border: none;
-    } */
+    }
 
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
 
-/* TO DO: Add the second media query here */
-/* 
-    Add the styles included below after uncommenting them,
-    then add the following selectors and styles:  
-    - adjust the layout in the header to prevent the items from wrapping, then set the padding to be: 
-        - top: 3rem
-        - right: 1rem
-        - bottom: 2rem
-        - left: 1rem
-    - adjust the styles for the link around the logo to remove the padding and set the flex basis back to zero
-    - adjust the flex basis of the nav to 60%
-    - adjust sections 2 and 3 so that they display using flexbox and allow wrapping
-    -  adjust h2 headings in sections 2 and 3 to give them a flex basis of 100%
-    - for the paragraphs in the last section, set their flex basis to 30%
-*/
+    header > a {
+        margin: 0;
+        flex-basis: 15%;
+    }
 
-    /* h1{
+    nav {
+        flex-basis: 100%;
+    }
+
+    nav ul {
+        justify-content: space-between;
+    }
+
+    nav li {
+        flex-basis: 20%;
+    }
+}
+
+/* SECOND MEDIA QUERY */
+@media screen and (min-width: 900px) {
+    h1 {
         font-size: 2.2rem;
     }
 
-    #section2{
+    #section2 {
         border-bottom: 8px solid var(--gray);
         border-top: 8px solid var(--gray);
         margin: 2rem auto 1rem;
-    } */
+    }
+
+    header {
+        flex-wrap: nowrap;
+        padding: 3rem 1rem 2rem 1rem;
+    }
+
+    header > a {
+        padding: 0;
+        flex-basis: 0;
+    }
+
+    nav {
+        flex-basis: 60%;
+    }
+
+    #section2,
+    #section3 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #section2 h2,
+    #section3 h2 {
+        flex-basis: 100%;
+    }
+
+    #section3 p {
+        flex-basis: 30%;
+    }
+}
